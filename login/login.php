@@ -3,7 +3,7 @@
 	<head>
 		<title>Quiz App</title>
 		<meta charset="utf-8"/>
-		<link href="" rel="stylesheet">
+		<link href="login_style.css" rel="stylesheet">
 	</head>
 	<body>
 		<header>
@@ -19,7 +19,9 @@
 				<input type="submit" name="submit" value="Login">
 			</form>
 			<br>
-			<a href="../sign_up/sign_up_1.php">Create a new user</a>
+		</div>
+		<div id="output">
 		</div>
 	</body>
+	<a href="../sign_up/sign_up_1.php">Create a new user</a>
 </html>

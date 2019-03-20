@@ -65,7 +65,7 @@
 			$output .= "<p class='error'>" . $errors[$i] . "</p>";
 		}
 
-		header("Location: sign_up_1.php?email=$email&username=$username&output=$output");
+		header("Location: sign_up.php?email=$email&username=$username&output=$output");
 		die();
 	} else {
 		$sql = "INSERT INTO users (password, email, username) VALUES ('$password', '$email', '$username')";
@@ -78,7 +78,7 @@
 		$conn->close();
 
 		$output = "<h2>The account was created successfully!</h2>";
-		header("Location: sign_up_1.php?output=$output");
+		header("Location: sign_up.php?output=$output");
 	}
 ?>
  

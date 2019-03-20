@@ -38,5 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div id="output">
 			<?php echo $returnedOutput; ?>
 		</div>
+		<a href="../login/login.php">Login page</a>
 	</body>
 </html>

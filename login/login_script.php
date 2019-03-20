@@ -9,7 +9,15 @@
 
     $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
     
-    
+	$authentication = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+	$authentication_result = $conn->query($authentication);
+
+	if ($authentication_result->num_rows == 1) {
+
+	} else {
+	  die(header('location: login.php'));
+	}
+	
 
 	//connection check
 	if ($conn->connect_error) { 

@@ -1,3 +1,7 @@
+<?php
+	include("user_validation.php");
+?>
+
 <!DOCTYPE html>
 <HTML lang="en">
 	<head>
@@ -9,7 +13,7 @@
 		<header>
 			<h1>Welcome to the Quiz App</h1>
 		</header>
-		<div id="login" action="login_script.php" method="POST">
+		<div id="login" action="match_user_in_db();" method="POST">
 			<h2>Login</h2>
 			<form>
 				<p>Username: </p>
@@ -23,5 +27,5 @@
 		<div id="output">
 		</div>
 	</body>
-	<a href="../sign_up/sign_up_1.php">Create a new user</a>
+	<a href="../sign_up/sign_up.php">Create a new user</a>
 </html>

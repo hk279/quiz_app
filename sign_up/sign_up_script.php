@@ -44,7 +44,7 @@
 
 	//Existing username check
 	$usernamecheck = "SELECT username FROM users WHERE username = '$username'";
-	$usernamecheck_result = $conn -> query($usernamecheck); 
+	$usernamecheck_result = $conn->query($usernamecheck); 
 
 	if ($usernamecheck_result->num_rows > 0) {
 		array_push($errors, "This username is taken");

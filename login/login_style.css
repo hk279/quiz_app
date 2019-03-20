@@ -1,0 +1,18 @@
+body {
+	text-align: center;
+}
+header {
+	margin: 40px 0px;
+}
+form {
+	border: 2px solid black;
+	border-radius: 20px;
+	padding: 20px 60px;
+	display: inline-block;
+}
+#new-user {
+	margin: auto;
+}
+.error {
+	color: red;
+}

@@ -3,7 +3,7 @@
 	<head>
 		<title>Quiz App</title>
 		<meta charset="utf-8"/>
-		<link href="sign_up_style.css" rel="stylesheet">
+		<link href="sign_up_style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<header>

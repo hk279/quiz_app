@@ -3,7 +3,7 @@
 	<head>
 		<title>Quiz Index</title>
 		<meta charset="utf-8"/>
-		<link href="quiz_style.css" rel="stylesheet">
+		<link href="quiz_style.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 		<header>

@@ -21,7 +21,7 @@
         if ($authentication_result->num_rows == 1) {
             $_SESSION['valid_user'] = mysql_result($authentication_result, 0, 0);
             $conn->close();
-            die(header("Location:../quizzes/quiz_index.html"));
+            die(header("Location:../quizzes/quiz_index.php"));
         } else {
             die(header("Location:login.php?output=$wrongLoginMessage"));
         }

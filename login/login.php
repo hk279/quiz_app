@@ -13,7 +13,7 @@ if (isset($_POST['submitButton'])) {
 <head>
 	<title>Quiz App</title>
 	<meta charset="utf-8" />
-	<link href="login_style.css" rel="stylesheet">
+	<link href="login_style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

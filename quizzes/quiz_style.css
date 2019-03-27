@@ -17,15 +17,8 @@ header {
 	padding: 1em;
 	margin: 2em auto;
 	position: relative;
+	box-shadow: 5px 10px 10px black;
 	cursor: pointer;
-}
-.s {
-	position:absolute; 
-	width:100%;
-	height:100%;
-	top:0;
-	left: 0;
-	z-index: 1;
 }
 #questions-div {
 	width: 70%;

@@ -81,4 +81,3 @@
 		header("Location: sign_up.php?output=$output");
 	}
 ?>
- 

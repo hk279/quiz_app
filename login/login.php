@@ -1,31 +1,44 @@
-<?php
-	include("user_validation.php");
-?>
+	<?php
+	//Defines that the user has started the login process.
+	if (isset($_POST['submitButton'])) {
+		define('LOGGING_IN', true);
+		include_once('./user_validation.php');
+		login_process();
+	} else {
+	?>
 
-<!DOCTYPE html>
-<HTML lang="en">
+	<!DOCTYPE html>
+	<HTML lang="en">
+
 	<head>
-		<title>Quiz App</title>
-		<meta charset="utf-8"/>
-		<link href="login_style.css" rel="stylesheet">
+	    <title>Quiz App</title>
+	    <meta charset="utf-8" />
+	    <link href="login_style.css" rel="stylesheet">
 	</head>
+
 	<body>
-		<header>
-			<h1>Welcome to the Quiz App</h1>
-		</header>
-		<div id="login" action="match_user_in_db();" method="POST">
-			<h2>Login</h2>
-			<form>
-				<p>Username: </p>
-				<input type="text" name="username"><br>
-				<p>Password: </p>
-				<input type="password" name="password"><br><br>
-				<input type="submit" name="submit" value="Login">
-			</form>
-			<br>
-		</div>
-		<div id="output">
-		</div>
+	    <header>
+	        <h1>Welcome to the Quiz App</h1>
+	    </header>
+	    <div>
+	        <h2>Login</h2>
+	        <form id="login" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+	            <p>Username: </p>
+	            <input type="text" name="username"><br>
+	            <p>Password: </p>
+	            <input type="password" name="password"><br><br>
+	            <input type="submit" name="submitButton" value="Login">
+	        </form>
+	        <br>
+	    </div>
+	    <div id="output">
+	    </div>
 	</body>
 	<a href="../sign_up/sign_up.php">Create a new user</a>
-</html>
+
+	</html>
+
+	<?php
+
+	}
+	?> 

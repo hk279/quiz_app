@@ -17,6 +17,7 @@ header {
 	padding: 1em;
 	margin: 2em auto;
 	position: relative;
+	cursor: pointer;
 }
 .s {
 	position:absolute; 

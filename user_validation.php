@@ -7,7 +7,7 @@
     }
 
     function match_user_in_db($username, $password) {
-        $wrongLoginMessage = "Wrong username or password.";
+        $wrongLoginMessage = "<br><p class='error'>Wrong username or password.</p>";
         $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 
         //connection check
@@ -20,9 +20,10 @@
 
         if ($authentication_result->num_rows == 1) {
             $_SESSION['valid_user'] = mysql_result($authentication_result, 0, 0);
-            die(header("location:../quizzes/quiz_index.html"));
+            $conn->close();
+            die(header("Location:../quizzes/quiz_index.html"));
         } else {
-            die(header("location: login.php?output=$wrongLoginMessage"));
+            die(header("Location:login.php?output=$wrongLoginMessage"));
         }
     }
 
@@ -34,7 +35,7 @@
     }
 
     function process_logout() {
-        $loggedOutMessage = "You are now logged out.";
+        $loggedOutMessage = "<br><p class='error'>You are now logged out.</p>";
         session_destroy();
         unset( $_SESSION );
         die( header("location: login.php?output=$loggedOutMessage") );  
@@ -42,7 +43,7 @@
     
     //User verification when not logging in.
     function verify_if_valid_user() {
-        $noLoginMessage = "You are not logged in";
+        $noLoginMessage = "<br><p class='error'>You are not logged in</p>";
         if( !isset($_SESSION['valid_user']) ) {
             die(header("location: login.php?output=$noLoginMessage"));
         }

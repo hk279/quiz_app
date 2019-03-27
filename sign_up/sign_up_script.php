@@ -4,12 +4,7 @@
 	$password = $_POST["password"];
 	$confirm = $_POST["confirm"];
 
-	$servername = "127.0.0.1:52503";
-	$dbusername = "azure";
-	$dbpassword = "6#vWHD_$";
-	$dbname = "quiz_app";
-
-	$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+	$conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 
 	//connection check
 	if ($conn->connect_error) { 

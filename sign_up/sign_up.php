@@ -1,9 +1,3 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $firstname = $_POST['name'];
-}
-?>
-
 <!DOCTYPE html>
 <HTML lang="en">
 	<head>

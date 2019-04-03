@@ -12,27 +12,27 @@
 		<nav>
 		</nav>
 		<section id="quizzes">
-			<div class="quiz-div" id="quiz-1" onclick="location.href='quiz1.php';">
+			<div class="quiz-div" id="quiz-1" onclick="location.href='quiz1.php'">
 				<h3>Quiz 1</h3>
 				<p>Description</p><br>
 				<p id="quiz1-status">Quiz status</p>
 			</div>
-			<div class="quiz-div" id="quiz-2" onclick="location.href='quiz2.php';">
+			<div class="quiz-div" id="quiz-2" onclick="location.href='quiz2.php'">
 				<h3>Quiz 2</h3>
 				<p>Description</p><br>
 				<p id="quiz2-status">Quiz status</p>
 			</div>
-			<div class="quiz-div" id="quiz-3" onclick="location.href='quiz3.php';">
+			<div class="quiz-div" id="quiz-3" onclick="location.href='quiz3.php'">
 				<h3>Quiz 3</h3>
 				<p>Description</p><br>
 				<p id="quiz3-status">Quiz status</p>
 			</div>
-			<div class="quiz-div" id="quiz-4" onclick="location.href='quiz4.php';">
+			<div class="quiz-div" id="quiz-4" onclick="location.href='quiz4.php'">
 				<h3>Quiz 4</h3>
 				<p>Description</p><br>
 				<p id="quiz4-status">Quiz status</p>		
 			</div>
-			<div class="quiz-div" id="quiz-5" onclick="location.href='quiz5.php';">
+			<div class="quiz-div" id="quiz-5" onclick="location.href='quiz5.php'">
 				<h3>Quiz 5</h3>
 				<p>Description</p><br>
 				<p id="quiz5-status">Quiz status</p>

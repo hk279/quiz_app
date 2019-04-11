@@ -63,7 +63,7 @@ include_once './../user_validation.php';
                 <input type=text name="q10-answer">
             </fieldset>
             <!-- A hidden quiz number field to send to the results page in order to know which quiz is being checked. -->
-            <input type=text id="quiz-number" name="quiz-number" value="1" style="display: none;">
+            <input type="hidden" id="quiz-number" name="quiz-number" value="1">
             <br><input type="submit" name="submit-answers" value="Submit Answers"><br>
         </form>
     </div>

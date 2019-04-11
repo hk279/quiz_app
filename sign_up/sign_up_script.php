@@ -63,16 +63,14 @@
 		header("Location: sign_up.php?email=$email&username=$username&output=$output");
 		die();
 	} else {
-		$sql = "INSERT INTO users (password, email, username) VALUES ('$password', '$email', '$username')";
+		$newUserQuery = "INSERT INTO users (password, email, username) VALUES ('$password', '$email', '$username')";
 
-		if ($conn->query($sql) === TRUE) {
-			echo "New record created successfully";
+		if ($conn->query($newUserQuery) === TRUE) {
+			$output = "<h2>The account was created successfully!</h2>";
+			header("Location: sign_up.php?output=$output");
 		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error;
+			echo "Error: " . $newUserQuery . "<br>" . $conn->error;
 		}
 		$conn->close();
-
-		$output = "<h2>The account was created successfully!</h2>";
-		header("Location: sign_up.php?output=$output");
 	}
 ?>

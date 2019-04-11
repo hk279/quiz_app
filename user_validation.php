@@ -46,11 +46,8 @@
     
     //User verification when not logging in.
     function verify_if_valid_user() {
-        echo $_SESSION['valid_user'];
         if( !isset($_SESSION['valid_user']) ) {
             die(header('location:'.URL_LOGIN_PAGE));
         }
-        /* echo session_id(); */
-        var_dump($_SESSION);
     }
 ?>

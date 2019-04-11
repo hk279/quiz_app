@@ -2,6 +2,7 @@
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 
 function checkAnswers($quizNumber) {
+    $user = $_SESSION['valid_user'];
     global $conn;
 
     $correctAnswers = 0;
@@ -31,6 +32,12 @@ function checkAnswers($quizNumber) {
             }
         }
     }
+    
+    //Updating the result into database.
+/*     $dbColumn = "quiz".$quizNumber."_score"
+    $updateResultQuery = "UPDATE users SET $dbColumn = $correctAnswers WHERE username = $user";
+    $conn->query($updateResultQuery); */
+
     mysql_close($conn);
     return $correctAnswers;
 }

@@ -1,3 +1,7 @@
+<?php
+	include_once './../user_validation.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,6 +13,7 @@
 		<header>
 			<h1>Choose a Quiz Below</h1>
 		</header>
+		<a href="logout.php"><button id="logout-button">Logout</button></a>
 		<nav>
 		</nav>
 		<section id="quizzes">

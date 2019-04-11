@@ -1,6 +1,8 @@
 <?php
 //Questions are retrieved from the database by using a function found in this file.
 include_once './get_question_texts.php';
+//Checking if the user is logged in.
+include_once './../user_validation.php';
 ?>
 
 <!DOCTYPE html>

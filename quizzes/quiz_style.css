@@ -28,3 +28,7 @@ header {
 	margin: 2em;
 	border-radius: 1em;
 }
+#logout-button {
+	cursor: pointer;
+	margin: 2em;
+}

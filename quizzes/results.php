@@ -3,6 +3,7 @@ $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 session_start();
 
 function checkAnswers($quizNumber) {
+
     $user = $_SESSION['valid_user'];
     global $conn;
 

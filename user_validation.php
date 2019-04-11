@@ -1,5 +1,4 @@
 <?php
-    /* ini_set("session.name", "s"); */
     session_start();
     define('URL_LOGIN_PAGE', '../login/login.php');
 
@@ -8,7 +7,7 @@
     }
 
     function match_user_in_db($username, $password) {
-
+        
         $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
         $wrongLoginMessage = "<br><p class='error'>Wrong username or password.</p>";
 

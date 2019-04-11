@@ -17,7 +17,8 @@
 				$returnedOutput = $_GET['output'];
 			?>
 			<form action="sign_up_script.php" method="POST">
-				<h3>Create An Account:</h3>
+				<h2>Create An Account</h2>
+				<hr>
 				<p>Enter Your Email Address: </p> 
 				<input id="email" type="text" name="email" value="<?php echo $returnedEmail; ?>"><br>
 				<p>Choose a Username: </p>

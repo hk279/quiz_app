@@ -18,8 +18,15 @@ include_once './../user_validation.php';
 <body>
     <header>
         <h2>Math Quiz</h2>
-        <p>Please make sure to include the appropriate unit, for example l, ml or % in your answer.</p><br>
-        <strong><a href="quiz_index.php">Return to Quiz Selection</a></strong>
+        <p>
+            Please make sure to include the appropriate unit, for example l, ml or % in your answer.
+        </p>
+        <p>
+            The minimum passing grade for this quiz is 5 points. 
+            Every correct answer is worth one point and there are no penalties for wrong answers.
+        </p>
+        <p>Good luck!<p>
+        <button id="custom-button-return" onclick="location.href='quiz_index.php'">Return to Quiz Selection</button>
     </header>
     <div id="questions-div">
         <form id="quiz" action="results.php" method="POST">

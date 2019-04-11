@@ -47,8 +47,6 @@
 		<form style="display: inline" action="logout.php" method="get">
   			<button id="custom-button-logout" type="submit">Logout</button>
 		</form>
-		<nav>
-		</nav>
 		<section id="quizzes">
 			<div class="quiz-div" id="quiz-1" onclick="location.href='quiz1.php'">
 				<h3>Quiz 1</h3>

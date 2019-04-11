@@ -5,7 +5,12 @@ body {
 	color: #13005C;
 }
 header {
-	margin: 2em;
+	margin: 2em auto;
+	padding: 1em;
+	width: 50%;
+	border: 2px solid #13005C;
+	border-radius: 1em;
+	background: #E1FAF9;
 }
 #quizzes {
 	border: 2px solid #13005C;
@@ -30,7 +35,7 @@ header {
 	border-radius: 1em;
 	box-shadow: 5px 10px 10px #13005C;
 	padding: 1em;
-	width: 70%;
+	width: 50%;
 	margin: 3em auto;
 	background: #E1FAF9;
 }
@@ -39,10 +44,6 @@ header {
 	border: 1px solid #13005C;
 	border-radius: 1em;
 	background: #F8F4E3;
-}
-#logout-button {
-	cursor: pointer;
-	margin: 2em;
 }
 .custom-button {
 	cursor: pointer;
@@ -64,4 +65,24 @@ header {
 	position: fixed;
 	right: 10px;
 	top: 10px;
+}
+#custom-button-return {
+	cursor: pointer;
+	margin: 1em;
+	padding: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	background: #F8F4E3;
+	border-radius: 0.5em;
+	font-weight: bold;
+	position: fixed;
+	left: 10px;
+	top: 10px;
+}
+#results {
+	margin: auto;
+	border: 1px solid #13005C;
+	border-radius: 1em;
+	box-shadow: 5px 10px 10px #13005C;
+	background: #F8F4E3;
+	width: 50%;
 }

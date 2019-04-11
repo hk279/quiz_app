@@ -22,8 +22,9 @@ if (isset($_POST['submitButton'])) {
 		<h1>Welcome to the Quiz App</h1>
 	</header>
 	<div>
-		<h2>Login</h2>
 		<form id="login" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+			<h2>Login</h2>
+			<hr>
 			<p>Username: </p>
 			<input type="text" name="username"><br>
 			<p>Password: </p>

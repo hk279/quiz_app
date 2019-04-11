@@ -20,7 +20,7 @@ include_once './../user_validation.php';
     <header>
         <h2>Quiz header</h2>
         <p>Quiz Instructions</p><br>
-        <a href="quiz_index.php">Return to Quiz Selection</a>
+        <button id="custom-button-return" onclick="location.href='quiz_index.php'">Return to Quiz Selection</button>
     </header>
     <div id="questions-div">
         <form id="quiz" action="results.php" method="POST">

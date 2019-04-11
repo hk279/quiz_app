@@ -3,6 +3,7 @@
 	<head>
 		<title>Quiz App</title>
 		<meta charset="utf-8"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<link href="sign_up_style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
@@ -32,6 +33,7 @@
 		<div id="output">
 			<?php echo $returnedOutput; ?>
 		</div>
+		<br>
 		<a href="../login/login.php">Login page</a>
 	</body>
 </html>

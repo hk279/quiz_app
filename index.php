@@ -3,6 +3,7 @@
     <head>
         <title>Quiz App Index</title>
         <meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="index_style.css" rel="stylesheet" />
     </head>
     <body>

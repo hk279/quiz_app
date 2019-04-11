@@ -1,34 +1,67 @@
 body {
 	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	background: #DEF2C8;
+	color: #13005C;
 }
 header {
 	margin: 2em;
 }
 #quizzes {
-	border: 2px solid black;
+	border: 2px solid #13005C;
 	border-radius: 2em;
 	width: 80%;
 	margin: auto;
+	background: #E1FAF9;
 }
 .quiz-div {
-	border: 1px solid black;
+	border: 1px solid #13005C;
 	border-radius: 1em;
 	width: 70%;
 	padding: 1em;
 	margin: 2em auto;
 	position: relative;
-	box-shadow: 5px 10px 10px black;
+	box-shadow: 5px 10px 10px #13005C;
 	cursor: pointer;
+	background: #F8F4E3;
 }
 #questions-div {
+	border: 1px solid #13005C;
+	border-radius: 1em;
+	box-shadow: 5px 10px 10px #13005C;
+	padding: 1em;
 	width: 70%;
 	margin: 3em auto;
+	background: #E1FAF9;
 }
 .question-fieldset {
 	margin: 2em;
+	border: 1px solid #13005C;
 	border-radius: 1em;
+	background: #F8F4E3;
 }
 #logout-button {
 	cursor: pointer;
 	margin: 2em;
+}
+.custom-button {
+	cursor: pointer;
+	margin: 2em;
+	padding: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	background: #DEF2C8;
+	border-radius: 0.5em;
+	font-weight: bold;
+}
+#custom-button-logout {
+	cursor: pointer;
+	margin: 1em;
+	padding: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	background: #EE4266;
+	border-radius: 0.5em;
+	font-weight: bold;
+	position: fixed;
+	right: 10px;
+	top: 10px;
 }

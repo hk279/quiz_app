@@ -13,6 +13,7 @@ if (isset($_POST['submitButton'])) {
 <head>
 	<title>Quiz App</title>
 	<meta charset="utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link href="login_style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -37,6 +38,7 @@ if (isset($_POST['submitButton'])) {
 			echo $returnedOutput;
 		?>
 	</div>
+	<br>
 	<a href="../sign_up/sign_up.php">Create a new user</a>
 </body>
 

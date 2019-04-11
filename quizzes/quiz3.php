@@ -12,6 +12,7 @@ include_once './../user_validation.php';
     <title>
     </title>
     <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="quiz_style.css" rel="stylesheet">
 </head>
 

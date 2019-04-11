@@ -37,6 +37,7 @@
 	<head>
 		<title>Quiz Index</title>
 		<meta charset="utf-8"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<link href="quiz_style.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
@@ -44,7 +45,7 @@
 			<h1>Choose a Quiz Below</h1>
 		</header>
 		<form style="display: inline" action="logout.php" method="get">
-  			<button id="logout-button">Logout</button>
+  			<button id="custom-button-logout" type="submit">Logout</button>
 		</form>
 		<nav>
 		</nav>
@@ -52,26 +53,31 @@
 			<div class="quiz-div" id="quiz-1" onclick="location.href='quiz1.php'">
 				<h3>Quiz 1</h3>
 				<p>Math quiz.</p><br>
+				<p><strong>Quiz Status:</strong></p>
 				<p><?php echo getQuizScore(1) ?></p>
 			</div>
 			<div class="quiz-div" id="quiz-2" onclick="location.href='quiz2.php'">
 				<h3>Quiz 2</h3>
 				<p>Geography quiz.</p><br>
+				<p><strong>Quiz Status:</strong></p>
 				<p><?php echo getQuizScore(2) ?></p>
 			</div>
 			<div class="quiz-div" id="quiz-3" onclick="location.href='quiz3.php'">
 				<h3>Quiz 3</h3>
 				<p>Description</p><br>
+				<p><strong>Quiz Status:</strong></p>
 				<p><?php echo getQuizScore(3) ?></p>
 			</div>
 			<div class="quiz-div" id="quiz-4" onclick="location.href='quiz4.php'">
 				<h3>Quiz 4</h3>
 				<p>Description</p><br>
+				<p><strong>Quiz Status:</strong></p>
 				<p><?php echo getQuizScore(4) ?></p>		
 			</div>
 			<div class="quiz-div" id="quiz-5" onclick="location.href='quiz5.php'">
 				<h3>Quiz 5</h3>
 				<p>Description</p><br>
+				<p><strong>Quiz Status:</strong></p>
 				<p><?php echo getQuizScore(5) ?></p>
 			</div>
 		</section>

@@ -11,6 +11,7 @@ include_once './../user_validation.php';
 <head>
     <title>Quiz 1</title>
     <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="quiz_style.css" rel="stylesheet">
 </head>
 
@@ -64,7 +65,8 @@ include_once './../user_validation.php';
             </fieldset>
             <!-- A hidden quiz number field to send to the results page in order to know which quiz is being checked. -->
             <input type="hidden" id="quiz-number" name="quiz-number" value="1">
-            <br><input type="submit" name="submit-answers" value="Submit Answers"><br>
+            <!-- <br><input type="submit" name="submit-answers" value="Submit Answers"><br> -->
+            <button class="custom-button" type="submit">Submit Answers</button><br>
         </form>
     </div>
 </body>

@@ -1,14 +1,18 @@
 body {
 	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	background: #DEF2C8;
+	color: #13005C;
 }
 header {
 	margin: 40px 0px;
 }
 form {
-	border: 2px solid black;
+	border: 2px solid #13005C;
 	border-radius: 20px;
 	padding: 20px 60px;
 	display: inline-block;
+	background: #E1FAF9;
 }
 #new-user {
 	margin: auto;

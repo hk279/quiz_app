@@ -1,6 +1,7 @@
 <?php
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 session_start();
+include_once 'get_question_texts.php';
 
 function getMinimumPassingGrade($quizNumber) {
     global $conn;
@@ -10,6 +11,19 @@ function getMinimumPassingGrade($quizNumber) {
         $minimumPassingGrade = $row["passing_grade"];
     }
     return $minimumPassingGrade;
+}
+
+function getCorrectAnswers($quizNumber) {
+    global $conn;
+    $correctAnswers = array();
+    $correctAnswersQuery = "SELECT question_answer FROM questions WHERE quiz_number = $quizNumber";
+    $correctAnswersQueryResult = $conn->query($correctAnswersQuery);
+
+    while ($row = $correctAnswersQueryResult->fetch_assoc()) {
+        array_push($correctAnswers, $row["question_answer"]);
+    }
+
+    return $correctAnswers;
 }
 
 function checkAnswers($quizNumber) {
@@ -90,6 +104,26 @@ function checkAnswers($quizNumber) {
                         echo "<p style='color: red;'>Unfortunately you did not pass the quiz.</p>";
                     }
                 ?>
+        </div>
+        <div id="correct-answers">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Correct Answer</th>
+                    </tr>
+                <thead>
+                <tbody>
+                    <?php
+                        $correctAnswers = getCorrectAnswers($quizNr);
+                        for ($i = 0; $i < 10; $i++) {
+                            $questionText = getQuestionText($quizNr, $i + 1);
+                            $correctAnswer = $correctAnswers[$i];
+                            echo "<tr><td>$questionText</td><td>$correctAnswer</td></tr>";
+                        }
+                    ?>
+                </tbody>
+            </table>
         </div>
         <button class="custom-button" onclick="location.href='./quiz_index.php'" style="background: #F8F4E3">
             Return to the Quiz Menu

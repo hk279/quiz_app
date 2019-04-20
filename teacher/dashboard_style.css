@@ -44,3 +44,20 @@ header {
 	right: 10px;
 	top: 10px;
 }
+#custom-button-search {
+	padding: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	background: #F8F4E3;
+	border-radius: 0.5em;
+	font-weight: bold;
+}
+input {
+	display: inline-block;
+	margin: 2em;
+}
+table {
+	margin: auto;
+}
+th, td {
+	border: 1px solid black;
+}

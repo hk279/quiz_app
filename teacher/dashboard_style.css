@@ -51,13 +51,42 @@ header {
 	border-radius: 0.5em;
 	font-weight: bold;
 }
+#custom-button-save {
+	padding: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	background: #F8F4E3;
+	border-radius: 0.5em;
+	font-weight: bold;
+}
+#custom-button-return {
+	cursor: pointer;
+	margin: 1em;
+	padding: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	background: #F8F4E3;
+	border-radius: 0.5em;
+	font-weight: bold;
+	position: fixed;
+	left: 10px;
+	top: 10px;
+}
 input {
 	display: inline-block;
 	margin: 2em;
+	width: 40%;
+	font-family: 'Montserrat', sans-serif;
 }
-table {
-	margin: auto;
+textarea {
+	font-family: 'Montserrat', sans-serif;
+	padding: 0.5em;
+}
+#results {
+	display: inline-block;
 }
 th, td {
 	border: 1px solid black;
+	padding: 0.5em;
+}
+fieldset {
+	margin: 1em;
 }

@@ -13,10 +13,10 @@
 		<form style="display: inline" action="logout.php" method="get">
   			<button id="custom-button-logout" type="submit">Logout</button>
 		</form>
-		<div class="dashboard-panel" onclick="location.href='results_dasboard.php'">
+		<div class="dashboard-panel" onclick="location.href='results_dashboard.php'">
             <h2 class="dasboard-panel-header">View Results</h2>
         </div>
-        <div class="dashboard-panel" onclick="location.href='quiz_editor.php'">
+        <div class="dashboard-panel" onclick="location.href='editor_dashboard.php'">
             <h2 class="dasboard-panel-header">Edit Quizzes</h2>
         </div>
 	</body>

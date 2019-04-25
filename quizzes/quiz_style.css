@@ -86,3 +86,12 @@ header {
 	background: #F8F4E3;
 	width: 50%;
 }
+#correct-answers {
+	display: inline-block;
+}
+th {
+	font-weight: bold;
+}
+th, td {
+	padding: 0.5em;
+}

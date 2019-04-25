@@ -2,6 +2,7 @@
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 session_start();
 include_once 'get_question_texts.php';
+include_once 'get_question_answers.php';
 
 function getMinimumPassingGrade($quizNumber) {
     global $conn;
@@ -105,8 +106,8 @@ function checkAnswers($quizNumber) {
                     }
                 ?>
         </div>
-        <div id="correct-answers">
-            <table>
+        <div>
+            <table id="correct-answers">
                 <thead>
                     <tr>
                         <th>Question</th>

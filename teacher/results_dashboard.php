@@ -35,7 +35,8 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
 	<body>
 		<header>
 			<h1>Results Dashboard</h1>
-		</header>
+        </header>
+        <button id="custom-button-return" onclick="location.href='teacher_dashboard.php'">Return</button>
 		<form style="display: inline" action="logout.php" method="get">
   			<button id="custom-button-logout" type="submit">Logout</button>
 		</form>
@@ -52,15 +53,17 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
             <input list="quizzes" name="quizzes">
             <datalist id="quizzes">
                 <!-- List of quizzes as options here -->
-                <option>Math Quiz</option>
-                <option>Geography Quiz</option>
-                <option>Irregular Verbs 1</option>
+                <?php
+                    for ($i = 0; $i < count($quizNames); $i++) {
+                        echo "<option>$quizNames[$i]</option>";
+                    }
+                ?>                
             </datalist>
             <input id="custom-button-search" type="submit" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" value="Search">
         </form>
         <div id="results">
         <table id="results-table">
-            <tbody>
+            <thead>
                 <tr>
                     <th></th>
                     <th><?php echo $quizNames[0] ?></th>
@@ -69,6 +72,8 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
                     <th><?php echo $quizNames[3] ?></th>
                     <th><?php echo $quizNames[4] ?></th>
                 </tr>
+            </thead>
+            <tbody>
                 <?php
                     $quizScoresQuery = "SELECT username, quiz1_score, quiz2_score, quiz3_score, quiz4_score, quiz5_score FROM users";
                     $quizScoresQueryResult = $conn->query($quizScoresQuery);

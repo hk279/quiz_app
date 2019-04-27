@@ -1,4 +1,7 @@
 <?php
+include_once '../user_validation.php';
+verify_if_valid_admin();
+
 $student = $_POST["students"];
 $quiz = $_POST["quizzes"];
 

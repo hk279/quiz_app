@@ -1,4 +1,7 @@
 <?php
+include_once '../user_validation.php';
+verify_if_valid_admin();
+
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 
 /* Getting student usernames from the db */

@@ -14,19 +14,6 @@ function getMinimumPassingGrade($quizNumber) {
     return $minimumPassingGrade;
 }
 
-function getCorrectAnswers($quizNumber) {
-    global $conn;
-    $correctAnswers = array();
-    $correctAnswersQuery = "SELECT question_answer FROM questions WHERE quiz_number = $quizNumber";
-    $correctAnswersQueryResult = $conn->query($correctAnswersQuery);
-
-    while ($row = $correctAnswersQueryResult->fetch_assoc()) {
-        array_push($correctAnswers, $row["question_answer"]);
-    }
-
-    return $correctAnswers;
-}
-
 function checkAnswers($quizNumber) {
 
     $user = $_SESSION['valid_user'];
@@ -116,11 +103,12 @@ function checkAnswers($quizNumber) {
                 <thead>
                 <tbody>
                     <?php
+                        $questionTexts = getQuestionTexts($quizNr);
                         $correctAnswers = getCorrectAnswers($quizNr);
                         for ($i = 0; $i < 10; $i++) {
-                            $questionText = getQuestionText($quizNr, $i + 1);
+                            $question = $questionTexts[$i];
                             $correctAnswer = $correctAnswers[$i];
-                            echo "<tr><td>$questionText</td><td>$correctAnswer</td></tr>";
+                            echo "<tr><td>$question</td><td>$correctAnswer</td></tr>";
                         }
                     ?>
                 </tbody>

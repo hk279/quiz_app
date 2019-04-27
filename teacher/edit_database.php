@@ -32,11 +32,11 @@
     $quizNumber = $_POST["quizNumber"];
 
     for ($i = 0; $i < 10; $i++) {
-        if ($questionTexts[$i] = null) {
-            continue;
-        }
+
+        //Add code for insert if the specific question doesn't exist yet in the database.
+        
         $questionNumber = $i + 1;
-        $updateQuestionQuery = "UPDATE questions SET question_text = $questionTexts[$i] WHERE quiz_number = $quizNumber AND question_number = $questionNumber";
+        $updateQuestionQuery = "UPDATE questions SET question_text = '$questionTexts[$i]' WHERE quiz_number = $quizNumber AND question_number = $questionNumber";
         $conn->query($updateQuestionQuery);
 
         if ($conn->query($updateQuestionQuery) === FALSE) {
@@ -45,11 +45,11 @@
     }
     
     for ($i = 0; $i < 10; $i++) {
-        if ($questionAnswers[$i] = null) {
-            continue;
-        }
+
+        //Add code for insert if the specific question doesn't exist yet in the database.
+
         $questionNumber = $i + 1;
-        $updateAnswerQuery = "UPDATE questions SET question_answer = $questionAnswers[$i] WHERE quiz_number = $quizNumber AND question_number = $questionNumber";
+        $updateAnswerQuery = "UPDATE questions SET question_answer = '$questionAnswers[$i]' WHERE quiz_number = $quizNumber AND question_number = $questionNumber";
         $conn->query($updateAnswerQuery);
 
         if ($conn->query($updateAnswerQuery) === FALSE) {
@@ -57,4 +57,5 @@
         }
     }
     
+    header("Location: editor_dashboard.php");
 ?>

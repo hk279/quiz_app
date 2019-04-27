@@ -3,7 +3,7 @@
     define('URL_LOGIN_PAGE', '../login/login.php');
 
     if( !defined('LOGGING_IN') ) {
-        verify_if_valid_user();
+        verify_if_valid_admin();
     }
 
     function match_user_in_db($username, $password) {
@@ -16,25 +16,16 @@
             die("Connection failed: " . $conn->connect_error); 
         }
 
-        $authenticationQuery = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+        $authenticationQuery = "SELECT * FROM users WHERE username = '$username' AND password = '$password' AND type = 'admin'";
         $authenticationResult = $conn->query($authenticationQuery);
 
         if ($authenticationResult->num_rows == 1) {
             while($row = mysqli_fetch_assoc($authenticationResult)) {
-                $_SESSION['valid_user'] = $row["username"];
-                //User type is checked
-                if ($row["type"] == "admin") {
-                    $_SESSION['valid_admin'] = true;
-                }
+                $_SESSION['valid_admin'] = $row["username"];
             }
-            //If logging in with admin credentials, directs to the teacher dashboard.
-            if (isset($_SESSION["valid_admin"])) {
-                die(header("Location:../teacher/teacher_dashboard.php"));
-            } else {
-                die(header("Location:../quizzes/quiz_index.php"));
-            }
-        }
-        else {
+            $_SESSION['logged_in'] = true;
+            die(header("Location:../quizzes/quiz_index.php"));
+        } else {
             die(header("Location: login.php?output=$wrongLoginMessage"));
         }
     }
@@ -53,16 +44,10 @@
     }
     
     //User verification when not logging in.
-    function verify_if_valid_user() {
-        if( !isset($_SESSION['valid_user']) ) {
+    function verify_if_valid_admin() {
+        if(!isset($_SESSION['valid_admin'])) {
             die(header('location:'.URL_LOGIN_PAGE));
         }
+        if ()
     }
-
-    //Admin verification.
-        function verify_if_valid_admin() {
-            if(!isset($_SESSION['valid_admin'])) {
-                die(header('location:'.URL_LOGIN_PAGE));
-            }
-        }
 ?>

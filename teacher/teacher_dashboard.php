@@ -1,3 +1,8 @@
+<?php
+include_once '../user_validation.php';
+verify_if_valid_admin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>

@@ -1,6 +1,8 @@
 <?php
 include_once '../quizzes/get_question_texts.php';
 include_once '../quizzes/get_question_answers.php';
+include_once '../user_validation.php';
+verify_if_valid_admin();
 
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 $quizNumber = $_POST["quizNumber"];
@@ -32,6 +34,8 @@ while ($row = $quizInstructionsQueryResult->fetch_assoc()) {
 	$quizInstructions = $row["quiz_instructions"];
 }
 
+//Declaring the questions array
+$questions = getQuestionTexts($quizNumber);
 //Declaring the answers array
 $answers = getCorrectAnswers($quizNumber);
 ?>
@@ -63,43 +67,43 @@ $answers = getCorrectAnswers($quizNumber);
 					<fieldset>
 						<legend>Questions:</legend>
 						<div class="q-and-a">
-							Question 1: <input type="text" name="q-1" value="<?php echo getQuestionText($quizNumber, 1) ?>">
+							Question 1: <input type="text" name="q-1" value="<?php echo $questions[0] ?>">
 							Answer: <input type=text name="q-1-a" value="<?php echo $answers[0] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 2: <input type="text" name="q-2" value="<?php echo getQuestionText($quizNumber, 2) ?>">
+							Question 2: <input type="text" name="q-2" value="<?php echo $questions[1] ?>">
 							Answer: <input type=text name="q-2-a" value="<?php echo $answers[1] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 3: <input type="text" name="q-3" value="<?php echo getQuestionText($quizNumber, 3) ?>">
+							Question 3: <input type="text" name="q-3" value="<?php echo $questions[2] ?>">
 							Answer: <input type=text name="q-3-a" value="<?php echo $answers[2] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 4: <input type="text" name="q-4" value="<?php echo getQuestionText($quizNumber, 4) ?>">
+							Question 4: <input type="text" name="q-4" value="<?php echo $questions[3] ?>">
 							Answer: <input type=text name="q-4-a" value="<?php echo $answers[3] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 5: <input type="text" name="q-5" value="<?php echo getQuestionText($quizNumber, 5) ?>">
+							Question 5: <input type="text" name="q-5" value="<?php echo $questions[4] ?>">
 							Answer: <input type=text name="q-5-a" value="<?php echo $answers[4] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 6: <input type="text" name="q-6" value="<?php echo getQuestionText($quizNumber, 6) ?>">
+							Question 6: <input type="text" name="q-6" value="<?php echo $questions[5] ?>">
 							Answer: <input type=text name="q-6-a" value="<?php echo $answers[5] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 7: <input type="text" name="q-7" value="<?php echo getQuestionText($quizNumber, 7) ?>">
+							Question 7: <input type="text" name="q-7" value="<?php echo $questions[6] ?>">
 							Answer: <input type=text name="q-7-a" value="<?php echo $answers[6] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 8: <input type="text" name="q-8" value="<?php echo getQuestionText($quizNumber, 8) ?>">
+							Question 8: <input type="text" name="q-8" value="<?php echo $questions[7] ?>">
 							Answer: <input type=text name="q-8-a" value="<?php echo $answers[7] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 9: <input type="text" name="q-9" value="<?php echo getQuestionText($quizNumber, 9) ?>">
+							Question 9: <input type="text" name="q-9" value="<?php echo $questions[8] ?>">
 							Answer: <input type=text name="q-9-a" value="<?php echo $answers[8] ?>">
 						</div>
 						<div class="q-and-a">
-							Question 10: <input type="text" name="q-10" value="<?php echo getQuestionText($quizNumber, 10) ?>">
+							Question 10: <input type="text" name="q-10" value="<?php echo $questions[9] ?>">
 							Answer: <input type=text name="q-10-a" value="<?php echo $answers[9] ?>">
 						</div>
 						<input type="hidden" name="quizNumber" value="<?php echo $quizNumber ?>">

@@ -41,6 +41,10 @@
 		<link href="quiz_style.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
+		<?php 
+		echo var_dump($_SESSION["valid_user"]);
+		echo var_dump($_SESSION["valid_admin"]);
+		?>
 		<header>
 			<h1>Choose a Quiz Below</h1>
 		</header>

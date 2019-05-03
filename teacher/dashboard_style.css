@@ -51,6 +51,13 @@ header {
 	border-radius: 0.5em;
 	font-weight: bold;
 }
+.custom-button-edit {
+	padding: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	background: #F8F4E3;
+	border-radius: 0.5em;
+	font-weight: bold;
+}
 #custom-button-save {
 	padding: 1.5em;
 	font-family: 'Montserrat', sans-serif;
@@ -58,7 +65,7 @@ header {
 	border-radius: 0.5em;
 	font-weight: bold;
 }
-#custom-button-return {
+.custom-button-return {
 	cursor: pointer;
 	margin: 1em;
 	padding: 1.5em;

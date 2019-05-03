@@ -7,7 +7,7 @@ $quiz = $_POST["quizzes"];
 
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 
-/* Getting student usernames from the db */
+/* Getting student usernames from the db. */
 $studentUsernames = array();
 $studentUsernamesQuery = "SELECT username FROM users";
 
@@ -27,6 +27,8 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
 }
 ?>
 
+<!-- Possibility to add a search/filter function to the result view later  -->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -43,27 +45,6 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
 		<form style="display: inline" action="logout.php" method="get">
   			<button id="custom-button-logout" type="submit">Logout</button>
 		</form>
-        <form>
-            <input list="students" name="students">
-            <datalist id="students">
-                <!-- List of students as options here -->
-                <?php
-                    for ($i = 0; $i < count($studentUsernames); $i++) {
-                        echo "<option>$studentUsernames[$i]</option>";
-                    }
-                ?>
-            </datalist>
-            <input list="quizzes" name="quizzes">
-            <datalist id="quizzes">
-                <!-- List of quizzes as options here -->
-                <?php
-                    for ($i = 0; $i < count($quizNames); $i++) {
-                        echo "<option>$quizNames[$i]</option>";
-                    }
-                ?>                
-            </datalist>
-            <input id="custom-button-search" type="submit" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" value="Search">
-        </form>
         <div id="results">
         <table id="results-table">
             <thead>
@@ -89,9 +70,15 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
                         $quiz5_score = $row["quiz5_score"];
                         echo "<tr><td>$username</td><td>$quiz1_score</td><td>$quiz2_score</td><td>$quiz3_score</td><td>$quiz4_score</td><td>$quiz5_score</td></tr>";
                     }
+                    echo "<tr><td></td><td><button type='submit' form='reset' name='quiz_reset_button' value='1'>Reset Scores</button></td>
+                    <td><button type='submit' form='reset' name='quiz_reset_button' value='2'>Reset Scores</button></td>
+                    <td><button type='submit' form='reset' name='quiz_reset_button' value='3'>Reset Scores</button></td>
+                    <td><button type='submit' form='reset' name='quiz_reset_button' value='4'>Reset Scores</button></td>
+                    <td><button type='submit' form='reset' name='quiz_reset_button' value='5'>Reset Scores</button></td></tr>";
                 ?>
             </tbody>
         </table>
+        <form id="reset" action="reset_quiz.php" method="POST"></form>
     </div>
 	</body>
 </html>

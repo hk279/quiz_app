@@ -36,34 +36,25 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
 		<header>
 			<h1>Editor Dashboard</h1>
         </header>
-        <button id="custom-button-return" onclick="location.href='teacher_dashboard.php'">Return</button>
+        <button class="custom-button-return" onclick="location.href='teacher_dashboard.php'">Return</button>
 		<form style="display: inline" action="logout.php" method="get">
   			<button id="custom-button-logout" type="submit">Logout</button>
         </form>
+        <!-- Several submit buttons with different values inside one form 
+        to send the number of the quiz that needs to be edited to the next page -->
+        <!-- Future development: There will be a button to close/open quizzes from this view. 
+        Buttons will be moved next to the header and button texts replaced with icons -->
         <form action="question_editor.php" method="POST">
-            <p><?php echo $quizNames[0] ?></p>
-            <input name="quizNumber" type="hidden" value="1">
-            <input type="submit" value="Edit Questions">
-        </form>
-        <form action="question_editor.php" method="POST">
-            <p><?php echo $quizNames[1] ?></p>
-            <input name="quizNumber" type="hidden" value="2">
-            <input type="submit" value="Edit Questions">
-        </form>
-        <form action="question_editor.php" method="POST">
-            <p><?php echo $quizNames[2] ?></p>
-            <input name="quizNumber" type="hidden" value="3">
-            <input type="submit" value="Edit Questions">
-        </form action="question_editor.php" method="POST">
-        <form action="question_editor.php" method="POST">
-            <p><?php echo $quizNames[3] ?></p>
-            <input name="quizNumber" type="hidden" value="4">
-            <input type="submit" value="Edit Questions">
-        </form>
-        <form action="question_editor.php" method="POST">
-            <p><?php echo $quizNames[4] ?></p>
-            <input name="quizNumber"  type="hidden" value="5">
-            <input type="submit" value="Edit Questions">
+            <h2><?php echo $quizNames[0] ?></h2>
+            <button class="custom-button-edit" type="submit" name="quiz_select" value="1">Edit Questions</button>
+            <h2><?php echo $quizNames[1] ?></h2>
+            <button class="custom-button-edit" type="submit" name="quiz_select" value="2">Edit Questions</button>
+            <h2><?php echo $quizNames[2] ?></h2>
+            <button class="custom-button-edit" type="submit" name="quiz_select" value="3">Edit Questions</button>
+            <h2><?php echo $quizNames[3] ?></h2>
+            <button class="custom-button-edit" type="submit" name="quiz_select" value="4">Edit Questions</button>
+            <h2><?php echo $quizNames[4] ?></h2>
+            <button class="custom-button-edit" type="submit" name="quiz_select" value="5">Edit Questions</button>
         </form>
 	</body>
 </html>

@@ -10,11 +10,15 @@
         <header>
             <h2>Welcome to the Quiz App</h2>
         </header>
-        <div>
+        <div id="intro">
+            <p>This service allows students to test their knowledge in premade quizzes.</p>
+            <p>Getting started is very simple - Just log in or sign up using the links below and let's get learning! </p>
+        </div>
+        <div class="btn">
             <h2>Login</h2>
             <a href="login/login.php"><span class="s"></span></a>
         </div>
-        <div>
+        <div class="btn">
             <h2>Sign Up</h2>
             <a href="sign_up/sign_up.php"><span class="s"></span></a>
         </div>

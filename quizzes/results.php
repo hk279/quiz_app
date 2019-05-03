@@ -1,19 +1,9 @@
 <?php
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
 session_start();
-include_once 'get_question_texts.php';
-include_once 'get_question_answers.php';
+include_once '../get_data.php';
 
-function getMinimumPassingGrade($quizNumber) {
-    global $conn;
-    $queryText = "SELECT passing_grade FROM quizzes WHERE quiz_id = $quizNumber";
-    $result = $conn->query($queryText);
-    while ($row = $result->fetch_assoc()) {
-        $minimumPassingGrade = $row["passing_grade"];
-    }
-    return $minimumPassingGrade;
-}
-
+/* The function counts the number of total correct answers */
 function checkAnswers($quizNumber) {
 
     $user = $_SESSION['valid_user'];
@@ -21,6 +11,7 @@ function checkAnswers($quizNumber) {
 
     $correctAnswers = 0;
     $studentAnswers = array();
+    /* Student answers are changed to all lower case for more fair comparison. */
     array_push(
         $studentAnswers,
         strtolower ( $_POST["q1-answer"] ),
@@ -41,7 +32,8 @@ function checkAnswers($quizNumber) {
         $result = $conn->query($queryText);
 
         while ($row = $result->fetch_assoc()) {
-            $correctAnswer = $row["question_answer"];
+            /* Right answers from the db are also changed to lower case for comparison. */
+            $correctAnswer = strtolower($row["question_answer"]);
             if ($studentAnswers[$i - 1] == $correctAnswer) {
                 $correctAnswers++;
             }
@@ -94,6 +86,8 @@ function checkAnswers($quizNumber) {
                 ?>
         </div>
         <div>
+        <!-- I added a correct answers table for possible future use. 
+        It shouldn't be used when students can complete the quiz multiple times as is the case now. I left it visible just for reference -->
             <table id="correct-answers">
                 <thead>
                     <tr>

@@ -1,43 +1,20 @@
 <?php
-include_once '../quizzes/get_question_texts.php';
-include_once '../quizzes/get_question_answers.php';
+include_once '../get_data.php';
 include_once '../user_validation.php';
 verify_if_valid_admin();
 
 $conn = new mysqli("127.0.0.1:52503", "azure", "6#vWHD_$", "quiz_app");
-$quizNumber = $_POST["quizNumber"];
+$quizNumber = $_POST["quiz_select"];
 
-//Getting quiz names from the db
-$quizName = "";
-$quizNameQuery = "SELECT quiz_name FROM quizzes WHERE quiz_id = $quizNumber";
-
-$quizNameQueryResult = $conn->query($quizNameQuery);
-while ($row = $quizNameQueryResult->fetch_assoc()) {
-	$quizName = $row["quiz_name"];
-}
-
-//Getting quiz descriptions from the db
-$quizDescription = "";
-$quizDescriptionQuery = "SELECT quiz_description FROM quizzes WHERE quiz_id = $quizNumber";
-
-$quizDesriptionQueryResult = $conn->query($quizDescriptionQuery);
-while ($row = $quizDesriptionQueryResult->fetch_assoc()) {
-	$quizDescription = $row["quiz_description"];
-}
-
-//Getting quiz instructions from the db
-$quizInstructions = "";
-$quizInstructionsQuery = "SELECT quiz_instructions FROM quizzes WHERE quiz_id = $quizNumber";
-
-$quizInstructionsQueryResult = $conn->query($quizInstructionsQuery);
-while ($row = $quizInstructionsQueryResult->fetch_assoc()) {
-	$quizInstructions = $row["quiz_instructions"];
-}
-
+//Getting quiz details for the quiz in the correct index (quiz number minus 1).
+$quizName = getQuizNames()[$quizNumber - 1];
+$quizDescription = getQuizDescriptions()[$quizNumber - 1];
+$quizInstructions = getQuizInstructions()[$quizNumber - 1];
 //Declaring the questions array
 $questions = getQuestionTexts($quizNumber);
 //Declaring the answers array
 $answers = getCorrectAnswers($quizNumber);
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +29,7 @@ $answers = getCorrectAnswers($quizNumber);
 		<header>
 			<h1>Question Editor</h1>
         </header>
-        <button id="custom-button-return" onclick="location.href='teacher_dashboard.php'">Return</button>
+        <button class="custom-button-return" onclick="location.href='teacher_dashboard.php'">Return</button>
 		<form style="display: inline" action="logout.php" method="get">
   			<button id="custom-button-logout" type="submit">Logout</button>
         </form>

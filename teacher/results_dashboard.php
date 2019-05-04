@@ -41,7 +41,7 @@ while ($row = $quizNamesQueryResult->fetch_assoc()) {
 		<header>
 			<h1>Results Dashboard</h1>
         </header>
-        <button id="custom-button-return" onclick="location.href='teacher_dashboard.php'">Return</button>
+        <button class="custom-button-return" onclick="location.href='teacher_dashboard.php'">Return</button>
 		<form style="display: inline" action="logout.php" method="get">
   			<button id="custom-button-logout" type="submit">Logout</button>
 		</form>
